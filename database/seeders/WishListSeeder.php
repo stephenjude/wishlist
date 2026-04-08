@@ -2,16 +2,28 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Product;
+use App\Models\User;
+use App\Models\WishList;
 use Illuminate\Database\Seeder;
 
 class WishListSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        $user = User::first();
+
+        if (! $user) {
+            return;
+        }
+
+        $products = Product::inRandomOrder()->take(3)->get();
+
+        foreach ($products as $product) {
+            WishList::firstOrCreate([
+                'user_id' => $user->id,
+                'product_id' => $product->id,
+            ]);
+        }
     }
 }

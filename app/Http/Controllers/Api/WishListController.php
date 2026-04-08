@@ -48,7 +48,7 @@ class WishListController extends Controller
     {
         $user = $request->user();
 
-        if (!$user->existsInWishlist($request->product_id)) {
+        if (! $user->existsInWishlist($request->product_id)) {
             return response()->json([
                 'message' => 'Product not found in wishlist',
             ], 404);

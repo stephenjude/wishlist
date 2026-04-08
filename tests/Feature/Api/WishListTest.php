@@ -67,7 +67,7 @@ describe('WishList', function () {
 
             Sanctum::actingAs($this->user);
 
-            $this->deleteJson('/api/wishlist/remove', ['product_id' => $this->product->id,])
+            $this->deleteJson('/api/wishlist/remove', ['product_id' => $this->product->id])
                 ->assertSuccessful()
                 ->assertJson(['message' => 'Product removed from wishlist']);
 

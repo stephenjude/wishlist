@@ -26,10 +26,15 @@ A Laravel-based RESTful API for managing user wishlists with token-based authent
    php artisan migrate
    ```
 
-4. **(Optional) Seed database with sample data:**
+4. **Seed database with demo data:**
    ```bash
    php artisan db:seed
    ```
+   
+   **Demo Data Includes:**
+   - 1 test user: `test@example.com` / `password`
+   - 10 sample products (electronics and accessories)
+   - 3 random products in test user's wishlist
 
 ## API Documentation
 
@@ -142,12 +147,45 @@ Include the `api_token` from login/register responses in subsequent requests:
 # Login to get token
 curl -X POST http://localhost/api/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"john@example.com","password":"password123"}'
+  -d '{"email":"test@example.com","password":"password"}'
 
 # Use token for authenticated requests
 curl -X GET http://localhost/api/wishlist \
   -H "Authorization: Bearer {api_token}"
 ```
+
+---
+
+## Quick Demo
+
+After seeding, test the API:
+
+```bash
+# 1. Login with demo user
+curl -X POST http://localhost/api/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com","password":"password"}'
+
+# 2. List all products
+curl http://localhost/api/products
+
+# 3. Get wishlist (use token from step 1)
+curl http://localhost/api/wishlist \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE"
+
+# 4. Add product to wishlist
+curl -X POST http://localhost/api/wishlist/add \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{"product_id":5}'
+
+# 5. Remove from wishlist
+curl -X DELETE http://localhost/api/wishlist/remove \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{"product_id":5}'
+```
+
 ---
 
 ### Products

@@ -10,7 +10,7 @@ describe('Products', function () {
             $this->getJson('/api/products')
                 ->assertSuccessful()
                 ->assertJsonStructure([
-                    'data' => ['*' => ['id', 'name', 'description', 'price', 'created_at', 'updated_at'],],
+                    'data' => ['*' => ['id', 'name', 'description', 'price', 'created_at', 'updated_at']],
                     'meta' => ['current_page', 'per_page', 'total', 'last_page', 'next_page_url', 'prev_page_url'],
                 ])
                 ->assertJsonPath('meta.current_page', 1)
