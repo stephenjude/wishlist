@@ -11,53 +11,53 @@ class ProductSeeder extends Seeder
     {
         $products = [
             [
-                'name' => 'Wireless Headphones',
-                'description' => 'Premium noise-cancelling wireless headphones with 30-hour battery life.',
-                'price' => 199.99,
-            ],
-            [
-                'name' => 'Smart Watch',
-                'description' => 'Fitness tracking smart watch with heart rate monitor and GPS.',
-                'price' => 299.99,
-            ],
-            [
-                'name' => 'Laptop Stand',
-                'description' => 'Ergonomic aluminum laptop stand with adjustable height.',
-                'price' => 49.99,
-            ],
-            [
-                'name' => 'Mechanical Keyboard',
-                'description' => 'RGB mechanical keyboard with Cherry MX switches.',
-                'price' => 129.99,
-            ],
-            [
-                'name' => 'USB-C Hub',
-                'description' => '7-in-1 USB-C hub with HDMI, USB 3.0, and SD card reader.',
-                'price' => 59.99,
-            ],
-            [
-                'name' => 'Wireless Mouse',
-                'description' => 'Ergonomic wireless mouse with silent clicks and long battery life.',
-                'price' => 39.99,
-            ],
-            [
-                'name' => 'Monitor Light Bar',
-                'description' => 'LED monitor light bar with adjustable brightness and color temperature.',
-                'price' => 69.99,
-            ],
-            [
-                'name' => 'Webcam HD',
-                'description' => '1080p HD webcam with auto-focus and built-in microphone.',
+                'name' => 'Electric Toothbrush',
+                'description' => 'Sonic electric toothbrush with 3 cleaning modes and 2-minute timer.',
                 'price' => 79.99,
             ],
             [
-                'name' => 'Portable SSD',
-                'description' => '500GB portable SSD with USB 3.2 and fast transfer speeds.',
-                'price' => 89.99,
+                'name' => 'Whitening Toothpaste',
+                'description' => 'Enamel-safe whitening toothpaste with fluoride for daily use.',
+                'price' => 8.99,
             ],
             [
-                'name' => 'Desk Mat',
-                'description' => 'Extended desk mat with stitched edges and water-resistant surface.',
+                'name' => 'Dental Floss Set',
+                'description' => 'Mint-flavored dental floss with expandable floss picks.',
+                'price' => 12.99,
+            ],
+            [
+                'name' => 'Mouthwash',
+                'description' => 'Alcohol-free antiseptic mouthwash for fresh breath and gum health.',
+                'price' => 6.99,
+            ],
+            [
+                'name' => 'Water Flosser',
+                'description' => 'Portable water flosser with 4 nozzles and 3 pressure settings.',
+                'price' => 49.99,
+            ],
+            [
+                'name' => 'Tongue Scraper',
+                'description' => 'Stainless steel tongue scraper to remove bacteria and improve breath.',
+                'price' => 9.99,
+            ],
+            [
+                'name' => 'Orthodontic Wax',
+                'description' => 'Dental wax kit for braces relief and comfort.',
+                'price' => 5.49,
+            ],
+            [
+                'name' => 'Interdental Brushes',
+                'description' => 'Pack of 50 interdental brushes for braces and implants.',
+                'price' => 14.99,
+            ],
+            [
+                'name' => 'Night Guard',
+                'description' => 'Custom-fit dental night guard for teeth grinding protection.',
+                'price' => 34.99,
+            ],
+            [
+                'name' => 'Toothbrush Holder',
+                'description' => 'UV sanitizing toothbrush holder with 4 slots and air vent.',
                 'price' => 24.99,
             ],
         ];
