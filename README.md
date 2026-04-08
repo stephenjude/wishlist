@@ -36,6 +36,40 @@ A Laravel-based RESTful API for managing user wishlists with token-based authent
    - 10 sample products (electronics and accessories)
    - 3 random products in test user's wishlist
 
+
+## Quick Demo
+
+After seeding, test the API:
+> Make sure to replace BASE_URL and BEARER_TOKEN in the following shell commands.
+
+```bash
+# 1. Login with demo user
+curl -X POST http://BASE_URL/api/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com","password":"password"}'
+
+# 2. List all products
+curl http://BASE_URL/api/products
+
+# 3. Get wishlist (use token from step 1)
+curl http://BASE_URL/api/wishlist \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE"
+
+# 4. Add product to wishlist
+curl -X POST http://BASE_URL/api/wishlist/add \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{"product_id":5}'
+
+# 5. Remove from wishlist
+curl -X DELETE http://BASE_URL/api/wishlist/remove \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{"product_id":5}'
+```
+
+---
+
 ## API Documentation
 
 Base URL: `/api`
@@ -145,45 +179,13 @@ Include the `api_token` from login/register responses in subsequent requests:
 
 ```bash
 # Login to get token
-curl -X POST http://localhost/api/login \
+curl -X POST http://BASE_URL/api/login \
   -H "Content-Type: application/json" \
   -d '{"email":"test@example.com","password":"password"}'
 
 # Use token for authenticated requests
-curl -X GET http://localhost/api/wishlist \
+curl -X GET http://BASE_URL/api/wishlist \
   -H "Authorization: Bearer {api_token}"
-```
-
----
-
-## Quick Demo
-
-After seeding, test the API:
-
-```bash
-# 1. Login with demo user
-curl -X POST http://localhost/api/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"test@example.com","password":"password"}'
-
-# 2. List all products
-curl http://localhost/api/products
-
-# 3. Get wishlist (use token from step 1)
-curl http://localhost/api/wishlist \
-  -H "Authorization: Bearer YOUR_TOKEN_HERE"
-
-# 4. Add product to wishlist
-curl -X POST http://localhost/api/wishlist/add \
-  -H "Authorization: Bearer YOUR_TOKEN_HERE" \
-  -H "Content-Type: application/json" \
-  -d '{"product_id":5}'
-
-# 5. Remove from wishlist
-curl -X DELETE http://localhost/api/wishlist/remove \
-  -H "Authorization: Bearer YOUR_TOKEN_HERE" \
-  -H "Content-Type: application/json" \
-  -d '{"product_id":5}'
 ```
 
 ---
